@@ -6,8 +6,8 @@ using namespace std;
 // Output: [6,9,12]
 int main(){
 
-    vector<string> strArr = {"bar","foo","the"};
-    string s = "barfoofoobarthefoobarman";
+    vector<string> strArr = {"word","good","best","good"};
+    string s = "wordgoodgoodgoodbestword";
 
     vector<string> split_arr;
 
@@ -33,11 +33,13 @@ int main(){
     for(int i=0; i<split_arr_len; i++){
          map<string, bool> visited;
          int c = 0;
-        for(int j=i; (j<arr_len+i) && (split_arr_len-i) >= arr_len; j++){
+        for(int j=i; (j<arr_len+i) && j < split_arr_len; j++){
             
             if(mp[split_arr[j]]){
+                cout << split_arr[j] << " ";
                 if(!visited[split_arr[j]]){
                     visited[split_arr[j]] = true;
+                    
                     c++;
                 }
             }
