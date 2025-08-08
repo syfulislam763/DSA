@@ -27,11 +27,14 @@ int main(){
         mp[w] = true;
     }
 
+    
+
     int split_arr_len = split_arr.size();
     for(int i=0; i<split_arr_len; i++){
-        map<string, bool> visited;
-        int c = 0;
-        for(int j=i; (j<arr_len) && (split_arr_len-i) >= arr_len; j++){
+         map<string, bool> visited;
+         int c = 0;
+        for(int j=i; (j<arr_len+i) && (split_arr_len-i) >= arr_len; j++){
+            
             if(mp[split_arr[j]]){
                 if(!visited[split_arr[j]]){
                     visited[split_arr[j]] = true;
@@ -44,6 +47,8 @@ int main(){
             ans.push_back(i*len);
         }
 
+
+        cout << endl;
 
 
     }
